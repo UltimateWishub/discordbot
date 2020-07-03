@@ -10,10 +10,10 @@ client.login(process.env.token);
 
 client.once('ready', () => {
     console.log('Dn.Bot is online!');
-    bot.user.setActivity("Hello", {type: "WATCHING"})
-});
+    bot.user.setActivity("Hello", {type: "WATCHING"});
+})
 
-client.on('message', message =>{
+client.on('message', message => {
    if(message.content === `${prefix}ching`){
        message.channel.send('chong');
    } else if (message.content === `${prefix}youtube`){
