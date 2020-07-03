@@ -6,7 +6,7 @@ client.once('ready', () => {
     console.log(bot_info.version);
 });
 
-bot.login(process.env.token);
+client.login(process.env.token);
 
 client.once('ready', () => {
     console.log('Dn.Bot is online!');
