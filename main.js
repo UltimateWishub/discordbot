@@ -10,6 +10,7 @@ client.login(process.env.token);
 
 client.once('ready', () => {
     console.log('Dn.Bot is online!');
+    bot.user.setActivity("Hello", {type: "WATCHING"})
 });
 
 client.on('message', message =>{
