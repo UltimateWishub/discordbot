@@ -10,7 +10,7 @@ client.login(process.env.token);
 
 client.once('ready', () => {
     console.log('Dn.Bot is online!');
-    client.user.setActivity("Hello", {type: "WATCHING"});
+    client.user.setActivity("the deacon server", {type: "WATCHING"});
 })
 
 client.on('message', message => {
