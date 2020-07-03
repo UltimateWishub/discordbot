@@ -29,8 +29,3 @@ client.on('message', message =>{
 
 });
 
-client.on('message', message => {
-    console.log(message.content);
-});
-
-
