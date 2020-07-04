@@ -21,9 +21,9 @@ fs.readdir("./commands/", (err, files) => {
 
     jsfile.forEach((f, i) => {
         let pull = require(`./commands/${f}`);
-        bot.commands.set(pull.config.name, pull);  
+        client.commands.set(pull.config.name, pull);  
         pull.config.aliases.forEach(alias => {
-            bot.aliases.set(alias, pull.config.name)
+            client.aliases.set(alias, pull.config.name)
         });
     });
 });
@@ -37,7 +37,7 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
 
     if(!message.content.startsWith(prefix)) return;
-    let commandfile = client.commands.get(cmd.slice(prefix.length)) || bot.commands.get(client.aliases.get(cmd.slice(prefix.length)))
+    let commandfile = client.commands.get(cmd.slice(prefix.length)) || client.commands.get(client.aliases.get(cmd.slice(prefix.length)))
     if(commandfile) commandfile.run(bot,message,args)
 
 })
