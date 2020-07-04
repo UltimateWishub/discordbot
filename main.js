@@ -27,7 +27,4 @@ client.on('message', message => {
     message.channel.send(`Username: ${message.author.tag}`);
     message.channel.send(`Your ID: ${message.author.id}`);
    } 
-    
-
-
 });
