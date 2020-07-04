@@ -20,6 +20,7 @@ client.on("message", async message => {
     let args = messageArray.slice(1);
 
     if(cmd === `${prefix}hi`){
-        return message.channel.send("Hello")
+        return message.channel.reply("Hello")
     }
+    
 })
