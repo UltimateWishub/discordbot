@@ -7,8 +7,8 @@ client.login(process.env.token);
 require("./util/eventhandler")(client)
 
 const fs = require("fs");
-bot.commands = new Discord.Collection();
-bot.aliases = new Discord.Collection();
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
 
