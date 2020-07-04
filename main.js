@@ -8,12 +8,12 @@ client.once('ready', () => {
 
 bot.on("guildMemberAdd", member => {
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'join-leave')
-    welcomeChannel.send (`Welcome ${member} ሰላም ነህ`)
+    welcomeChannel.send (`Welcome ${member}`)
 })
 
 bot.on("guildMemberRemove", member => {
     const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'join-leave')
-    welcomeChannel.send (`Goodbye ${member} ደና ደሩ`)
+    welcomeChannel.send (`Goodbye ${member}`)
 })
 
 client.login(process.env.token);
