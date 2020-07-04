@@ -4,6 +4,7 @@ module.exports.run = async (bot, message, args) => {
     const embed = new Discord.MessageEmbed()
         .setTitle('this is a test embed')
         .setURL('roblox.com')
+        message.channel.send(embed);
 }
 
 module.exports.config = {
