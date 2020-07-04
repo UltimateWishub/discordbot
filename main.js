@@ -4,12 +4,7 @@ const botsettings = require("./botsettings.json");
 
 client.login(process.env.token);
 
-client.once('ready', () => {
-    console.log('Dn.Bot is online!');
-    client.user.setActivity("the deacon server", {type: "WATCHING"});
-})
-
-require("./util/eventHandler")(client)
+require("./util/eventhandler")(client)
 
 const fs = require("fs");
 bot.commands = new Discord.Collection();
