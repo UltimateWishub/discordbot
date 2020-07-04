@@ -26,12 +26,7 @@ client.on('message', message => {
    } else if (message.content === `${prefix}me`){
     message.channel.send(`Username: ${message.author.tag}`);
     message.channel.send(`Your ID: ${message.author.id}`);
-   } else if (message.content === `${prefix}embed`){
-    const embed = new Discord.MessageEmbed()
-    .setTitle('this is a test embed')
-    .setURL('roblox.com');
-    message.channel.send(embed);
-   }
+   } 
     
 
 
