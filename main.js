@@ -9,7 +9,7 @@ client.once('ready', () => {
     client.user.setActivity("the deacon server", {type: "WATCHING"});
 })
 
-require("./util/eventHandler")(bot)
+require("./util/eventHandler")(client)
 
 const fs = require("fs");
 bot.commands = new Discord.Collection();
