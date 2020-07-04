@@ -29,16 +29,3 @@ client.on('message', message => {
    }
 
 });
-
-module.exports.run = async (bot, message, args) => {
-    const embed = new Discord.MessageEmbed()
-        .setTitle('this is a test embed')
-}
-
-module.exports.config = {
-    name: "hi",
-    description: "example of an embed.",
-    usage: ".embed",
-    accessableby: "Members",
-    aliases: []
-}
