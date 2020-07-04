@@ -9,6 +9,7 @@
   "author": "Wishub#0096",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.2.0",
+    "fs": "0.0.1-security"
   }
 }

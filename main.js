@@ -6,6 +6,16 @@ client.once('ready', () => {
     console.log(bot_info.version);
 });
 
+bot.on("guildMemberAdd", member => {
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'join-leave')
+    welcomeChannel.send (`Welcome ${member} ሰላም ነህ`)
+})
+
+bot.on("guildMemberRemove", member => {
+    const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'join-leave')
+    welcomeChannel.send (`Goodbye ${member} ደና ደሩ`)
+})
+
 client.login(process.env.token);
 
 client.once('ready', () => {
