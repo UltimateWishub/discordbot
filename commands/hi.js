@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const clientsettings = require("./clientsettings.json");
+const clientsettings = require("../clientsettings.json");
 
 module.exports.run = async (client, message, args) => {
     return message.reply("Hello")
