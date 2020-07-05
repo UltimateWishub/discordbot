@@ -8,5 +8,7 @@ module.exports.run = async (client, message, args) => {
 module.exports.config = {
     name: "hi",
     description: "",
-    usage: ".hi"
+    usage: ".hi",
+    accessableby: "",
+    aliases: [""]
 }
