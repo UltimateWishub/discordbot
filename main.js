@@ -9,4 +9,9 @@ client.on("ready", async () => {
 
 client.login(process.env.token);
 
-
+if (message.content.startsWith(`${prefix}hi`)) {
+	message.channel.send('Hello');
+} else if (message.content.startsWith(`${prefix}me`)) {
+    message.channel.send(`Username: ${messsage.author.tag}`);
+    message.channel.send(`Your ID: ${messsage.author.id}`)
+}
