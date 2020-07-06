@@ -14,6 +14,6 @@ client.on('message', message => {
 	    message.channel.send('Hello');
     } else if (message.content.startsWith(`${prefix}me`)) {
         message.channel.send(`Username: ${messsage.author.tag}`);
-        message.channel.send(`Your ID: ${messsage.author.id}`)
+        message.channel.send(`Your ID: ${message.author.id}`)
     }
 });
