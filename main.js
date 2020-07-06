@@ -15,5 +15,22 @@ client.on('message', message => {
     } else if (message.content.startsWith(`${prefix}me`)) {
         message.channel.send(`Username: ${message.author.tag}`);
         message.channel.send(`Your ID: ${message.author.id}`)
-    }
+    } else if (message.content.startsWith(`${prefix}test`)) {
+        const exampleEmbed = new Discord.MessageEmbed()
+	        .setTitle('Some title')
+	        .setDescription('Some description here')
+	        .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+	        .addFields(
+		        { name: 'Regular field title', value: 'Some value here' },
+		        { name: '\u200B', value: '\u200B' },
+		        { name: 'Inline field title', value: 'Some value here', inline: true },
+		        { name: 'Inline field title', value: 'Some value here', inline: true },
+	        )
+	    .addField('Inline field title', 'Some value here', true)
+	    .setImage('https://i.imgur.com/wSTFkRM.png')
+	    .setTimestamp()
+	    .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+
+channel.send(exampleEmbed);
+            }
 });
