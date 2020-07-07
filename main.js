@@ -26,10 +26,8 @@ client.on('message', async message => {
         let pollChannel = message.guild.channels.cache.find(channel => channel.id === pollChannelID);
         let pollDescription = message.content.split(" ").slice(1).join(" ")
 
-        console.log(pollDescription)
-
         let embedPoll = new Discord.MessageEmbed()
-        .setTitle('😲 New Poll! 😲')
+        .setTitle(message.author)
         .setDescription(pollDescription)
         .setColor('#23a5cd')
         let msgEmbed = await pollChannel.send(embedPoll);
