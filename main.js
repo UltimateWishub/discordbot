@@ -24,7 +24,7 @@ client.on('message', async message => {
     } if (message.content.startsWith(`${prefix}suggest`)){
         pollChannelID = message.channel.id;
         let pollChannel = message.guild.channels.cache.find(channel => channel.id === pollChannelID);
-        let pollDescription = args.slice(2).join(' ');
+        let pollDescription = message.content.split(" ").slice(1).join(" ")
 
         console.log(pollDescription)
 
