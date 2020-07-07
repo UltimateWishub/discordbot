@@ -10,6 +10,12 @@ client.on("ready", async () => {
 client.login(process.env.token);
 
 client.on('message', async message => {
+    if(message.author.bot || message.channel.type === "dm") return;
+
+    const messageArray = message.content.split(' ');
+	const cmd = messageArray[0];
+	const args = messageArray.slice(1);
+
     if (message.content.startsWith(`${prefix}hi`)) {
 	    message.reply('Hello');
     } else if (message.content.startsWith(`${prefix}me`)) {
