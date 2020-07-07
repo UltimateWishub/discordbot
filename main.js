@@ -25,7 +25,7 @@ client.on('message', async message => {
         pollChannelID = message.channel.id;
         let pollChannel = message.guild.channels.cache.find(channel => channel.id === pollChannelID);
         let pollTitle = message.content.split(",").slice(1).join(" ")
-        let pollDescription = message.content.split(",").slice(1).join(" ")
+        let pollDescription = message.content.split(".").slice(1).join(" ")
 
         let embedPoll = new Discord.MessageEmbed()
         .setTitle(pollTitle)
