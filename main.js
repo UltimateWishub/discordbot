@@ -27,7 +27,7 @@ client.on('message', async message => {
         let pollDescription = message.content.split(" ").slice(1).join(" ")
 
         let embedPoll = new Discord.MessageEmbed()
-        .setTitle(message.author)
+        .setTitle(message.author.tag)
         .setDescription(pollDescription)
         .setColor('#23a5cd')
         let msgEmbed = await pollChannel.send(embedPoll);
