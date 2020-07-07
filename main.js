@@ -24,7 +24,8 @@ client.on('message', async message => {
     } if (message.content.startsWith(`${prefix}suggest`)){
         pollChannelID = message.channel.id;
         let pollChannel = message.guild.channels.cache.find(channel => channel.id === pollChannelID);
-        let pollDescription = args.slice(1).join(' ');
+        let pollDescription = args.slice(2).join(' ');
+
         console.log(pollDescription)
 
         let embedPoll = new Discord.MessageEmbed()
