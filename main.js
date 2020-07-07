@@ -25,6 +25,7 @@ client.on('message', async message => {
         pollChannelID = message.channel.id;
         let pollChannel = message.guild.channels.cache.find(channel => channel.id === pollChannelID);
         let pollDescription = args.slice(1).join(' ');
+        console.log(pollDescription)
 
         let embedPoll = new Discord.MessageEmbed()
         .setTitle('😲 New Poll! 😲')
