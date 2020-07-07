@@ -31,8 +31,9 @@ client.on('message', async message => {
         .setTitle(suggestTitle)
         .setDescription(suggestDescription)
         .setColor('#23a5cd')
-        .setAuthor(`Requested by`,message.author.username)
+        .setAuthor(message.author.username,)
         .setFooter('If you agree thumbs up. If not then thumbs down.')
+        .setThumbnail(message.author.displayAvatarURL())
         let msgEmbed = await suggestChannel.send(embedPoll);
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
