@@ -21,18 +21,21 @@ client.on('message', async message => {
     } else if (message.content.startsWith(`${prefix}me`)) {
         message.channel.send(`Username: ${message.author.tag}`);
         message.channel.send(`Your ID: ${message.author.id}`)
-    } if (message.content.startsWith(`${prefix}suggest`)){
-        pollChannelID = message.channel.id;
-        let pollChannel = message.guild.channels.cache.find(channel => channel.id === pollChannelID);
-        let pollTitle = message.content.split(",").slice(1).join(" ")
-        let pollDescription = message.content.split("!").slice(1).join(" ")
+    } else if (message.content.startsWith(`${prefix}suggest`)){
+        suggestChannelID = message.channel.id;
+        let suggestChannel = message.guild.channels.cache.find(channel => channel.id === suggestChannelID);
+        let suggestTitle = message.content.split(" ").slice(1).join(" ")
+        let suggestDescription = message.content.split(",").slice(1).join(" ")
 
         let embedPoll = new Discord.MessageEmbed()
-        .setTitle(pollTitle)
-        .setDescription(pollDescription)
+        .setTitle(suggestTitle)
+        .setDescription(suggestDescription)
         .setColor('#23a5cd')
-        let msgEmbed = await pollChannel.send(embedPoll);
+        .setAuthor(message.author.username, message.author.avatar)
+        .setFooter('If you agree thumbs up. If not then thumbs down.')
+        let msgEmbed = await suggestChannel.send(embedPoll);
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
-    }
+    } 
+
 });
