@@ -24,10 +24,11 @@ client.on('message', async message => {
     } if (message.content.startsWith(`${prefix}suggest`)){
         pollChannelID = message.channel.id;
         let pollChannel = message.guild.channels.cache.find(channel => channel.id === pollChannelID);
+        let pollTitle = message.content.split(",").slice(1).join(" ")
         let pollDescription = message.content.split(" ").slice(1).join(" ")
 
         let embedPoll = new Discord.MessageEmbed()
-        .setTitle(message.author.tag)
+        .setTitle(pollTitle)
         .setDescription(pollDescription)
         .setColor('#23a5cd')
         let msgEmbed = await pollChannel.send(embedPoll);
