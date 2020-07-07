@@ -9,7 +9,7 @@ client.on("ready", async () => {
 
 client.login(process.env.token);
 
-client.on('message', message => {
+client.on('message', async message => {
     if (message.content.startsWith(`${prefix}hi`)) {
 	    message.reply('Hello');
     } else if (message.content.startsWith(`${prefix}me`)) {
