@@ -27,12 +27,12 @@ client.on('message', async message => {
         let suggestTitle = message.content.split(" ").slice(1).join(" ")
 
         let embedPoll = new Discord.MessageEmbed()
-        .setTitle(`{message.author.Username}'s suggestion`)
+        .setTitle(message.author.Username`'s suggestion`)
         .setColor('#23a5cd')
         .addFields(
 		{ name: 'Suggestion:', value: suggestTitle, inline: true },
 		{ name: 'Submitted by:', value: message.author.tag, inline: true },
-		{ name: '\u200B', value: '\u200B' },
+		{ name: '\u100B', value: '\u100B' },
 	)
         .setFooter('If you agree thumbs up. If not then thumbs down.')
         .setThumbnail(message.author.displayAvatarURL())
