@@ -53,6 +53,6 @@ client.on('message', async message => {
 	)
         .setFooter('Use the suggestions command in the #suggestions channel and everything else in this channel')
         let msgEmbed = await helpChannel.send(embedhelp);
-    }
+    } 
 
 });
