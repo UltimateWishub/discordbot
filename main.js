@@ -30,9 +30,7 @@ client.on('message', async message => {
         .setTitle(suggestTitle)
         .setColor('#23a5cd')
         .addFields(
-		{ name: 'Regular field title', value: 'Some value here' },
-		{ name: '\u200B', value: '\u200B' },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'Suggestion:', value: 'suggestTitle', inline: true },
 		{ name: 'Inline field title', value: 'Some value here', inline: true },
 	)
         .setFooter('If you agree thumbs up. If not then thumbs down.')
