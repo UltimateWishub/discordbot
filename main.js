@@ -47,9 +47,9 @@ client.on('message', async message => {
         .setColor('#f4aea4')
         .addFields(
 		{ name: '.hi', value: `I will say hi back`, inline: true },
-		{ name: '.me', value: `I'll send you tag and user ID`, inline: true },
-		{ name: '.suggest <whatever suggestion>', value: `I'll mark your suggestion`, inline: true },
-		{ name: '.help', value: `Shows a list of my commands`, inline: true },
+		{ name: '.me', value: `I'll send you tag and user ID`, inline: false },
+		{ name: '.suggest <whatever suggestion>', value: `I'll mark your suggestion`, inline: false },
+		{ name: '.help', value: `Shows a list of my commands`, inline: false },
 	)
         .setFooter('Use the suggestions command in the #suggestions channel and everything else in this channel')
         let msgEmbed = await helpChannel.send(embedhelp);
