@@ -40,7 +40,7 @@ client.on('message', async message => {
         await msgEmbed.react('👎')
     } else if (message.content.startsWith(`${prefix}help`)) {
         helpChannelID = message.channel.id;
-        let helpChannel = message.guild.channels.cache.find(channel => channel.id === suggestChannelID);
+        let helpChannel = message.guild.channels.cache.find(channel => channel.id === helpChannelID);
 
         let embedhelp = new Discord.MessageEmbed()
         .setTitle(`Commands`)
