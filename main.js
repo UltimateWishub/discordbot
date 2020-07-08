@@ -26,7 +26,7 @@ client.on('message', async message => {
         let suggestChannel = message.guild.channels.cache.find(channel => channel.id === suggestChannelID);
         let suggestTitle = message.content.split(" ").slice(1).join(" ")
 
-        let embedPoll = new Discord.MessageEmbed()
+        let embedsuggest = new Discord.MessageEmbed()
         .setTitle(`Game/Movie night suggestion`)
         .setColor('#23a5cd')
         .addFields(
@@ -36,7 +36,7 @@ client.on('message', async message => {
 	)
         .setFooter('If you agree thumbs up. If not then thumbs down.')
         .setThumbnail(message.author.displayAvatarURL())
-        let msgEmbed = await suggestChannel.send(embedPoll);
+        let msgEmbed = await suggestChannel.send(embedsuggest);
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
     } 
