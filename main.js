@@ -43,7 +43,7 @@ client.on('message', async message => {
         let helpChannel = message.guild.channels.cache.find(channel => channel.id === suggestChannelID);
 
         let embedhelp = new Discord.MessageEmbed()
-        .setTitle(`New suggestion`)
+        .setTitle(`Commands`)
         .setColor('#f4aea4')
         .addFields(
 		{ name: 'Suggestion:', value: suggestTitle, inline: true },
