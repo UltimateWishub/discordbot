@@ -27,7 +27,7 @@ client.on('message', async message => {
         let suggestTitle = message.content.split(" ").slice(1).join(" ")
 
         let embedPoll = new Discord.MessageEmbed()
-        .setTitle(message.author.Username`'s suggestion`)
+        .setTitle(`Game/Movie night suggestion`)
         .setColor('#23a5cd')
         .addFields(
 		{ name: 'Suggestion:', value: suggestTitle, inline: true },
