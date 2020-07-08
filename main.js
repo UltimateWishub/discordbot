@@ -29,7 +29,12 @@ client.on('message', async message => {
         let embedPoll = new Discord.MessageEmbed()
         .setTitle(suggestTitle)
         .setColor('#23a5cd')
-        .setAuthor(message.author.username)
+        .addFields(
+		{ name: 'Regular field title', value: 'Some value here' },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+	)
         .setFooter('If you agree thumbs up. If not then thumbs down.')
         .setThumbnail(message.author.displayAvatarURL())
         let msgEmbed = await suggestChannel.send(embedPoll);
