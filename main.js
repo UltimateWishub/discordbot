@@ -46,11 +46,12 @@ client.on('message', async message => {
         .setTitle(`Commands`)
         .setColor('#f4aea4')
         .addFields(
-		{ name: 'Suggestion:', value: suggestTitle, inline: true },
-		{ name: 'Submitted by:', value: message.author.tag, inline: true },
+		{ name: '.hi', value: `I will say hi back`, inline: true },
+		{ name: '.me', value: `I'll send you tag and user ID`, inline: true },
+		{ name: '.suggest <whatever suggestion>', value: `I'll mark your suggestion`, inline: true },
+		{ name: '.help', value: `Shows a list of my commands`, inline: true },
 	)
-        .setFooter('Use the suggestions command in the #suggestions channel an everything else in this channel')
-        .setThumbnail(message.author.displayAvatarURL())
+        .setFooter('Use the suggestions command in the #suggestions channel and everything else in this channel')
         let msgEmbed = await helpChannel.send(embedhelp);
     }
 
