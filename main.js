@@ -42,7 +42,16 @@ client.on('message', async message => {
         helpChannelID = message.channel.id;
         let helpChannel = message.guild.channels.cache.find(channel => channel.id === suggestChannelID);
 
-        let embedsuggest = new Discord.MessageEmbed()
+        let embedhelp = new Discord.MessageEmbed()
+        .setTitle(`New suggestion`)
+        .setColor('#f4aea4')
+        .addFields(
+		{ name: 'Suggestion:', value: suggestTitle, inline: true },
+		{ name: 'Submitted by:', value: message.author.tag, inline: true },
+	)
+        .setFooter('Use the suggestions command in the #suggestions channel an everything else in this channel')
+        .setThumbnail(message.author.displayAvatarURL())
+        let msgEmbed = await helpChannel.send(embedhelp);
     }
 
 });
