@@ -32,7 +32,6 @@ client.on('message', async message => {
         .addFields(
 		{ name: 'Suggestion:', value: suggestTitle, inline: true },
 		{ name: 'Submitted by:', value: message.author.tag, inline: true },
-		{ name: '\u200B', value: '\u200B' },
 	)
         .setFooter('If you agree thumbs up. If not then thumbs down.')
         .setThumbnail(message.author.displayAvatarURL())
