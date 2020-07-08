@@ -27,7 +27,7 @@ client.on('message', async message => {
         let suggestTitle = message.content.split(" ").slice(1).join(" ")
 
         let embedsuggest = new Discord.MessageEmbed()
-        .setTitle(`Game/Movie night suggestion`)
+        .setTitle(`New suggestion`)
         .setColor('#23a5cd')
         .addFields(
 		{ name: 'Suggestion:', value: suggestTitle, inline: true },
@@ -38,6 +38,11 @@ client.on('message', async message => {
         let msgEmbed = await suggestChannel.send(embedsuggest);
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
-    } 
+    } else if (message.content.startsWith(`${prefix}help`)) {
+        helpChannelID = message.channel.id;
+        let helpChannel = message.guild.channels.cache.find(channel => channel.id === suggestChannelID);
+
+        let embedsuggest = new Discord.MessageEmbed()
+    }
 
 });
