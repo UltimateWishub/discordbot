@@ -25,11 +25,9 @@ client.on('message', async message => {
         suggestChannelID = message.channel.id;
         let suggestChannel = message.guild.channels.cache.find(channel => channel.id === suggestChannelID);
         let suggestTitle = message.content.split(" ").slice(1).join(" ")
-        let suggestDescription = message.content.split(",").slice(1).join(" ")
 
         let embedPoll = new Discord.MessageEmbed()
         .setTitle(suggestTitle)
-        .setDescription(suggestDescription)
         .setColor('#23a5cd')
         .setAuthor(message.author.username)
         .setFooter('If you agree thumbs up. If not then thumbs down.')
