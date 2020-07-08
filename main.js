@@ -2,10 +2,6 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const {prefix} = require('./config.json');
 
-const role = guild.roles.cache.find(role => role.name === 'Deacon');
-const member = message.mentions.members.first();
-member.roles.add(role);
-
 client.on("ready", async () => {
     console.log('Dn.Bot is online!');
     client.user.setActivity("the deacon server", {type: "WATCHING"});
