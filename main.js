@@ -47,7 +47,7 @@ client.on('message', async message => {
         .setColor('#FFA500')
         .addFields(
 		{ name: '.hi', value: `I'll say hi back`, inline: true },
-		{ name: '.me', value: `I'll send you tag and user ID`, value: `robux`, inline: false },
+		{ name: '.me', value: `I'll send you  your tag and user ID`, inline: false },
 		{ name: '.suggest <whatever suggestion>', value: `I'll mark your suggestion`, inline: false },
 		{ name: '.help', value: `Shows a list of my commands`, inline: false },
 	)
