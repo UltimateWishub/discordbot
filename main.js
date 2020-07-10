@@ -29,7 +29,6 @@ client.on('message', async message => {
         let embedsuggest = new Discord.MessageEmbed()
         .setTitle(`New suggestion`)
         .setColor('#23a5cd')
-        .setTimestamp
         .addFields(
 		{ name: 'Suggestion:', value: suggestTitle, inline: true },
 		{ name: 'Submitted by:', value: message.author.tag, inline: true },
@@ -84,6 +83,6 @@ client.on('message', async message => {
         { name: option8 },
         { name: option9 },
         )
-        
+        let msgEmbed = await helpChannel.send(embedhelp);
     }
 });
