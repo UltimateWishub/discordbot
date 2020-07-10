@@ -29,6 +29,7 @@ client.on('message', async message => {
         let embedsuggest = new Discord.MessageEmbed()
         .setTitle(`New suggestion`)
         .setColor('#23a5cd')
+        .setTimestamp
         .addFields(
 		{ name: 'Suggestion:', value: suggestTitle, inline: true },
 		{ name: 'Submitted by:', value: message.author.tag, inline: true },
@@ -46,13 +47,30 @@ client.on('message', async message => {
         .setTitle(`Commands`)
         .setColor('#FFA500')
         .addFields(
-		{ name: '.hi', value: `I'll say hi back`, inline: true },
-        { name: '.me', value: `I'll send you  your tag and user ID`, inline: false
-            ,value: `hi`, inline: false },
-		{ name: '.suggest <whatever suggestion>', value: `I'll mark your suggestion`, inline: false },
-		{ name: '.help', value: `Shows a list of my commands`, inline: false },
+		{ name: '.hi', value: `I'll say hi back`, inline: true},
+        { name: '.me', value: `I'll send you  your tag and user ID`, inline: false},
+		{ name: '.suggest <whatever suggestion>', value: `I'll mark your suggestion`, inline: false},
+		{ name: '.help', value: `Shows a list of my commands`, inline: false},
 	)
         .setFooter('Use the suggestions command in the #suggestions channel and everything else in this channel')
         let msgEmbed = await helpChannel.send(embedhelp);
+    } else if (message.content.startsWith(`${prefix}poll`)) {
+        pollChannelID = message.channel.id;
+        let pollChannel = message.guild.channels.cache.find(channel => channel.id === pollChannelID);
+        let pollTitle = message.content.split(" ").slice(1).join(" ")
+        let option1 = message.content.split("|").slice(1).join(" ")
+        let option2 = message.content.split("|").slice(1).join(" ")
+        let option3 = message.content.split("|").slice(1).join(" ")
+        let option4 = message.content.split("|").slice(1).join(" ")
+
+        let embedpoll = new Discord.MessageEmbed()
+        .setTitle(pollTitle)
+        .setColor('#6D10CF')
+        .addFields(
+        { name: option1 },
+        { name: option2 },
+        { name: option3 },
+        { name: option4 },
+        )
     }
 });
