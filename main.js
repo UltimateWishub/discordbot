@@ -30,19 +30,13 @@ client.on('message', async message => {
         .setTitle(`New suggestion`)
         .setColor('#23a5cd')
         .setTimestamp()
-        .message.delete()
         .addFields(
 		{ name: 'Suggestion:', value: suggestDesc, inline: true },
 		{ name: 'Submitted by:', value: message.author.tag, inline: true },
 	)
         .setFooter('If you agree thumbs up. If not then thumbs down.')
         .setThumbnail(message.author.displayAvatarURL())
-        suggestChannel.send(embedsuggest).then(msg => {
-            const time = 3; //Seconds
-            setTimeout(_=> {
-              msg.delete();
-            }, 1000 * time);
-        });
+        suggestChannel.send(embedsuggest).then(message.delete())
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
     } else if (message.content.startsWith(`${prefix}help`)) {
