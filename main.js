@@ -22,6 +22,7 @@ client.on('message', async message => {
         message.channel.send(`Username: ${message.author.tag}`);
         message.channel.send(`Your ID: ${message.author.id}`)
     } else if (message.content.startsWith(`${prefix}suggest`)){
+        message.delete();
         suggestChannelID = message.channel.id;
         let suggestChannel = message.guild.channels.cache.find(channel => channel.id === suggestChannelID);
         let suggestDesc = message.content.split(" ").slice(1).join(" ")
