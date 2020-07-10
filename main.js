@@ -39,6 +39,12 @@ client.on('message', async message => {
         let msgEmbed = await suggestChannel.send(embedsuggest);
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
+        suggestChannel.send(embedsuggest).then(msg => {
+            const time = 3; //Seconds
+            setTimeout(_=> {
+              msg.delete();
+            }, 1000 * time);
+          );
     } else if (message.content.startsWith(`${prefix}help`)) {
         helpChannelID = message.channel.id;
         let helpChannel = message.guild.channels.cache.find(channel => channel.id === helpChannelID);
@@ -84,6 +90,6 @@ client.on('message', async message => {
         { name: option8 },
         { name: option9 },
         )
-        let msgEmbed = await helpChannel.send(embedhelp);
+        let msgEmbed = await helpChannel.send(embedpoll);
     }
 });
