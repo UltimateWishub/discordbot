@@ -30,7 +30,7 @@ client.on('message', async message => {
         .setTitle(`New suggestion`)
         .setColor('#23a5cd')
         .setTimestamp()
-        .message.author.delete()
+        .message.delete()
         .addFields(
 		{ name: 'Suggestion:', value: suggestDesc, inline: true },
 		{ name: 'Submitted by:', value: message.author.tag, inline: true },
