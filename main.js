@@ -36,9 +36,7 @@ client.on('message', async message => {
 	)
         .setFooter('If you agree thumbs up. If not then thumbs down.')
         .setThumbnail(message.author.displayAvatarURL())
-        suggestChannel.send(embedsuggest).then(message.delete())
-        await msgEmbed.react('👍')
-        await msgEmbed.react('👎')
+        let msgEmbed = await suggestChannel.send(embedsuggest);
     } else if (message.content.startsWith(`${prefix}help`)) {
         helpChannelID = message.channel.id;
         let helpChannel = message.guild.channels.cache.find(channel => channel.id === helpChannelID);
