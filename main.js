@@ -24,13 +24,14 @@ client.on('message', async message => {
     } else if (message.content.startsWith(`${prefix}suggest`)){
         suggestChannelID = message.channel.id;
         let suggestChannel = message.guild.channels.cache.find(channel => channel.id === suggestChannelID);
-        let suggestTitle = message.content.split(" ").slice(1).join(" ")
+        let suggestDesc = message.content.split(" ").slice(1).join(" ")
 
         let embedsuggest = new Discord.MessageEmbed()
         .setTitle(`New suggestion`)
         .setColor('#23a5cd')
+        .setTimestamp()
         .addFields(
-		{ name: 'Suggestion:', value: suggestTitle, inline: true },
+		{ name: 'Suggestion:', value: suggestDesc, inline: true },
 		{ name: 'Submitted by:', value: message.author.tag, inline: true },
 	)
         .setFooter('If you agree thumbs up. If not then thumbs down.')
