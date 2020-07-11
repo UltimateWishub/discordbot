@@ -92,8 +92,8 @@ client.on('message', async message => {
         .setDescription(`React to the church you go to`)
         .setColor(`#9900FF`)
         let msgEmbed = await message.channel.send(embed).
-        message.react(`:regional_indicator_a:`)
-        message.react(`:regional_indicator_b:`)
-        message.react(`:regional_indicator_c:`)
+        await msgEmbed.react('1️⃣')
+        await msgEmbed.react('2️⃣')
+        await msgEmbed.react('3️⃣')
     }
 });
