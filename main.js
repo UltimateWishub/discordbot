@@ -92,9 +92,9 @@ client.on('message', async message => {
         .setDescription(`React to the place you go to`)
         .setColor(`#9900FF`)
         .addFields(
-            { name: '1️⃣', value: ተክለሃይማኖት, inline: true },
-            { name: '2️⃣', value: ሥላሴ, inline: true },
-            { name: '3️⃣', value: ሚካኤል, inline: true },
+            { name: '1️⃣', value: `ተክለሃይማኖት`, inline: true },
+            { name: '2️⃣', value: `ሥላሴ`, inline: true },
+            { name: '3️⃣', value: `ሚካኤል`, inline: true },
         )
         let msgEmbed = await message.channel.send(embed)
         await msgEmbed.react('1️⃣')
