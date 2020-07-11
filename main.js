@@ -86,5 +86,14 @@ client.on('message', async message => {
         { name: option9 },
         )
         let msgEmbed = await helpChannel.send(embedpoll);
+    } else if (message.content.startsWith(`${prefix}reactions`)) {
+        let embed = new Discord.MessageEmbed()
+        .setTitle(`Reaction Roles`)
+        .setDescription(`React to the church you go to`)
+        .setColor(`#9900FF`)
+        let msgEmbed = await message.channel.send(embed).
+        msg.react(`:regional_indicator_a:`)
+        msg.react(`:regional_indicator_b:`)
+        msg.react(`:regional_indicator_c:`)
     }
 });
