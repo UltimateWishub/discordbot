@@ -89,9 +89,9 @@ client.on('message', async message => {
     } else if (message.content.startsWith(`${prefix}reactions`)) {
         let embed = new Discord.MessageEmbed()
         .setTitle(`Reaction Roles`)
-        .setDescription(`React to the church you go to`)
+        .setDescription(`React to the place you go to`)
         .setColor(`#9900FF`)
-        let msgEmbed = await message.channel.send(embed).
+        let msgEmbed = await message.channel.send(embed)
         await msgEmbed.react('1️⃣')
         await msgEmbed.react('2️⃣')
         await msgEmbed.react('3️⃣')
