@@ -89,7 +89,7 @@ client.on('message', async message => {
     } else if (message.content.startsWith(`${prefix}reactions`)) {
         let embed = new Discord.MessageEmbed()
         .setTitle(`Reaction Roles`)
-        .setDescription(`React to the place you go to`)
+        .setDescription(`React to the church you go to`)
         .setColor(`#9900FF`)
         .addFields(
             { name: '1️⃣ = ተክለሃይማኖት', inline: false },
@@ -103,3 +103,16 @@ client.on('message', async message => {
     }
 });
 
+client.on("messageReactionAdd", async (reaction, user) => {
+    if (reaction.message.partial) await reaction.message.fetch();
+    if (reaction.partial) await reaction.fetch();
+
+    if (user.bot) return;
+    if (!reaction.message.guild) return;
+
+    if (reaction.message.channel.id === "731628304242835496") {
+        if (reaction.emoji.name === '1️⃣'){
+            await reaction.message.guild.memebers.cache.get(user.id).roles.add("709138749904125963")
+        }
+    }
+})
