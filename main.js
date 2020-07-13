@@ -21,6 +21,8 @@ client.on('message', async message => {
     } else if (message.content.startsWith(`${prefix}me`)) {
         message.channel.send(`Username: ${message.author.tag}`);
         message.channel.send(`Your ID: ${message.author.id}`)
+    }  else if (message.content.startsWith(`${prefix}ping`)) {
+        message.channel.send(m.createdTimestamp-message.createdTimestamp);
     } else if (message.content.startsWith(`${prefix}suggest`)){
         message.delete();
         suggestChannelID = message.channel.id;
