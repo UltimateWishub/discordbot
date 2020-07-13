@@ -100,6 +100,7 @@ client.on('message', async message => {
         await msgEmbed.react('1️⃣')
         await msgEmbed.react('2️⃣')
         await msgEmbed.react('3️⃣')
+        await msgEmbed.react('4️⃣')
     }
 });
 
