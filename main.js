@@ -87,14 +87,15 @@ client.on('message', async message => {
         )
         let msgEmbed = await helpChannel.send(embedpoll);
     } else if (message.content.startsWith(`${prefix}reactions`)) {
+        message.delete
         let embed = new Discord.MessageEmbed()
         .setTitle(`Reaction Roles`)
         .setDescription(`React to the church you go to`)
         .setColor(`#9900FF`)
         .addFields(
-            { name: '1️⃣ = ተክለሃይማኖት', inline: false },
-            { name: '2️⃣ = ሥላሴ', inline: false },
-            { name: '3️⃣ = ሚካኤል', inline: false },
+            { name: '1️⃣ = ተክለሃይማኖት', value: ``, inline: false },
+            { name: '2️⃣ = ሥላሴ', value: ``, inline: false },
+            { name: '3️⃣ = ሚካኤል', value: ``, inline: false },
         )
         let msgEmbed = await message.channel.send(embed)
         await msgEmbed.react('1️⃣')
@@ -197,7 +198,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
 
     if (reaction.message.channel.id === "731628304242835496") {
         if (reaction.emoji.name === '4️⃣'){
-            await reaction.message.guild.members.cache.get(user.id).roles.add("709138749904125963")
+            await reaction.message.guild.members.cache.get(user.id).roles.add("731625527894605915")
         }
     }
 })
@@ -211,7 +212,7 @@ client.on("messageReactionRemove", async (reaction, user) => {
 
     if (reaction.message.channel.id === "731628304242835496") {
         if (reaction.emoji.name === '4️⃣'){
-            await reaction.message.guild.members.cache.get(user.id).roles.add("709138749904125963")
+            await reaction.message.guild.members.cache.get(user.id).roles.add("731625527894605915")
         }
     }
 })
