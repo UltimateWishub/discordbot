@@ -212,7 +212,7 @@ client.on("messageReactionRemove", async (reaction, user) => {
 
     if (reaction.message.channel.id === "731628304242835496") {
         if (reaction.emoji.name === '4️⃣'){
-            await reaction.message.guild.members.cache.get(user.id).roles.add("731625527894605915")
+            await reaction.message.guild.members.cache.get(user.id).roles.remove("731625527894605915")
         }
     }
 })
