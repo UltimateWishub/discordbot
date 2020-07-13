@@ -87,7 +87,7 @@ client.on('message', async message => {
         )
         let msgEmbed = await helpChannel.send(embedpoll);
     } else if (message.content.startsWith(`${prefix}reactions`)) {
-        message.delete
+        message.delete();
         let embed = new Discord.MessageEmbed()
         .setTitle(`Reaction Roles`)
         .setDescription(`React to the church you go to`)
