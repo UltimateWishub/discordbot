@@ -93,9 +93,10 @@ client.on('message', async message => {
         .setDescription(`React to the church you go to`)
         .setColor(`#9900FF`)
         .addFields(
-            { name: '1️⃣ = ተክለሃይማኖት', value: ` `, inline: false },
-            { name: '2️⃣ = ሥላሴ', value: ` `, inline: false },
-            { name: '3️⃣ = ሚካኤል', value: ` `, inline: false },
+            { name: '1️⃣ = ተክለሃይማኖት', value: `ተክለሃይማኖት role`, inline: false },
+            { name: '2️⃣ = ሥላሴ', value: `ሥላሴ role`, inline: false },
+            { name: '3️⃣ = ሚካኤል', value: `ሚካኤል role`, inline: false },
+            { name: '4️⃣ = ጊዮርጊስ', value: `ጊዮርጊስ role`, inline: false },
         )
         let msgEmbed = await message.channel.send(embed)
         await msgEmbed.react('1️⃣')
