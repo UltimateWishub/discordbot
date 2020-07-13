@@ -112,7 +112,7 @@ client.on("messageReactionAdd", async (reaction, user) => {
 
     if (reaction.message.channel.id === "731628304242835496") {
         if (reaction.emoji.name === '1️⃣'){
-            await reaction.message.guild.memebers.cache.get(user.id).roles.add("709138749904125963")
+            await reaction.message.guild.members.cache.get(user.id).roles.add("709138749904125963")
         }
     }
 })
