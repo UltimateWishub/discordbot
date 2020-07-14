@@ -57,37 +57,6 @@ client.on('message', async message => {
 	)
         .setFooter('Use the suggestions command in the #suggestions channel and everything else in this channel')
         let msgEmbed = await helpChannel.send(embedhelp);
-    } else if (message.content.startsWith(`${prefix}poll`)) {
-        pollChannelID = message.channel.id;
-        let pollChannel = message.guild.channels.cache.find(channel => channel.id === pollChannelID);
-        let pollTitle = message.content.split(" ").slice(1).join(" ")
-        let option1 = message.content.split("|").slice(1).join(" ")
-        let option2 = message.content.split("|").slice(1).join(" ")
-        let option3 = message.content.split("|").slice(1).join(" ")
-        let option4 = message.content.split("|").slice(1).join(" ")
-        let option5 = message.content.split("|").slice(1).join(" ")
-        let option6 = message.content.split("|").slice(1).join(" ")
-        let option7 = message.content.split("|").slice(1).join(" ")
-        let option8 = message.content.split("|").slice(1).join(" ")
-        let option9 = message.content.split("|").slice(1).join(" ")
-
-        let embedpoll = new Discord.MessageEmbed()
-        .setTitle(pollTitle)
-        .setColor('#6D10CF')
-        .setTimestamp
-        .setThumbnail()
-        .addFields(
-        { name: option1 },
-        { name: option2 },
-        { name: option3 },
-        { name: option4 },
-        { name: option5 },
-        { name: option6 },
-        { name: option7 },
-        { name: option8 },
-        { name: option9 },
-        )
-        let msgEmbed = await helpChannel.send(embedpoll);
     } else if (message.content.startsWith(`${prefix}reactions`)) {
         message.delete();
         let embed = new Discord.MessageEmbed()
