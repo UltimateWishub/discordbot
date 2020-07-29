@@ -55,6 +55,7 @@ client.on('message', async message => {
         { name: '.me', value: `I'll send you  your tag and user ID`, inline: false},
 		{ name: '.suggest <whatever suggestion>', value: `I'll mark your suggestion`, inline: false},
 		{ name: '.help', value: `Shows a list of my commands`, inline: false},
+		{ name: '.meme', value: `Shows a random meme from r/memes subreddit`, inline: false},
 	)
         .setFooter('Use the suggestions command in the #suggestions channel and everything else in this channel')
         let msgEmbed = await helpChannel.send(embedhelp);
