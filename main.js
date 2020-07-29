@@ -24,7 +24,7 @@ client.on('message', async message => {
         message.channel.send(`Your ID: ${message.author.id}`)
     }  else if (message.content === `${prefix}ping`) {
         message.channel.send(m.createdTimestamp-message.createdTimestamp);
-    } else if (message.content === `${prefix}suggest`){
+    } else if (message.content.startsWith  (`${prefix}suggest`)){
         message.delete();
         suggestChannelID = message.channel.id;
         let suggestChannel = message.guild.channels.cache.find(channel => channel.id === suggestChannelID);
