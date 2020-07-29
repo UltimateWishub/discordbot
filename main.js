@@ -17,14 +17,14 @@ client.on('message', async message => {
 	const cmd = messageArray[0];
 	const args = messageArray.slice(1);
 
-    if (message.content.startsWith(`${prefix}hi`)) {
+    if (message.content === `${prefix}hi`) {
 	    message.reply('Hello');
-    } else if (message.content.startsWith(`${prefix}me`)) {
+    } else if (message.content === `${prefix}me`) {
         message.channel.send(`Username: ${message.author.tag}`);
         message.channel.send(`Your ID: ${message.author.id}`)
-    }  else if (message.content.startsWith(`${prefix}ping`)) {
+    }  else if (message.content === `${prefix}ping`) {
         message.channel.send(m.createdTimestamp-message.createdTimestamp);
-    } else if (message.content.startsWith(`${prefix}suggest`)){
+    } else if (message.content === `${prefix}suggest`){
         message.delete();
         suggestChannelID = message.channel.id;
         let suggestChannel = message.guild.channels.cache.find(channel => channel.id === suggestChannelID);
@@ -43,7 +43,7 @@ client.on('message', async message => {
         let msgEmbed = await suggestChannel.send(embedsuggest);
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
-    } else if (message.content.startsWith(`${prefix}help`)) {
+    } else if (message.content === `${prefix}help`) {
         helpChannelID = message.channel.id;
         let helpChannel = message.guild.channels.cache.find(channel => channel.id === helpChannelID);
 
@@ -58,7 +58,7 @@ client.on('message', async message => {
 	)
         .setFooter('Use the suggestions command in the #suggestions channel and everything else in this channel')
         let msgEmbed = await helpChannel.send(embedhelp);
-    } else if (message.content.startsWith(`${prefix}reactions`)) {
+    } else if (message.content === `${prefix}reactions`) {
         message.delete();
         let embed = new Discord.MessageEmbed()
         .setTitle(`Reaction Roles`)
@@ -75,7 +75,7 @@ client.on('message', async message => {
         await msgEmbed.react('2️⃣')
         await msgEmbed.react('3️⃣')
         await msgEmbed.react('4️⃣')
-    } else if (message.content.startsWith(`${prefix}meme`)) {
+    } else if (message.content === `${prefix}meme`) {
         const embed = new Discord.MessageEmbed()
         got('https://www.reddit.com/r/memes/random/.json').then(response => {
             let content = JSON.parse(response.body);
