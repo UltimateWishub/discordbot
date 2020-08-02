@@ -15,7 +15,8 @@ client.on('message', async message => {
 
     const messageArray = message.content.split(' ');
 	const cmd = messageArray[0];
-	const args = messageArray.slice(1);
+    const args = messageArray.slice(1);
+    let botcmd = message.guild.channels.cache.get("730476719366078464");
 
     if (message.content === `${prefix}hi`) {
 	    message.reply('Hello');
@@ -44,8 +45,7 @@ client.on('message', async message => {
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
     } else if (message.content === `${prefix}help`) {
-        helpChannelID = message.channel.id;
-        let helpChannel = message.guild.channels.cache.find(channel => channel.id === helpChannelID);
+        let botcmd = message.guild.channels.cache.get("730476719366078464");
 
         let embedhelp = new Discord.MessageEmbed()
         .setTitle(`Commands`)
@@ -58,7 +58,7 @@ client.on('message', async message => {
 		{ name: '.meme', value: `Shows a random meme from r/memes subreddit`, inline: false},
 	)
         .setFooter('Use the suggestions command in the #suggestions channel and everything else in this channel')
-        let msgEmbed = await helpChannel.send(embedhelp);
+        let msgEmbed = await botcmd.send(embedhelp);
     } else if (message.content === `${prefix}reactions`) {
         message.delete();
         let embed = new Discord.MessageEmbed()
@@ -92,7 +92,7 @@ client.on('message', async message => {
             embed.setImage(memeImage)
             embed.setColor('RANDOM')
             embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-            message.channel.send(embed);
+            let msgEmbed = await botcmd.send(embedhelp);
         })
     }
 });
