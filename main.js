@@ -79,7 +79,6 @@ client.on('message', async message => {
         await msgEmbed.react('3️⃣')
         await msgEmbed.react('4️⃣')
     } else if (message.content === `${prefix}meme`) {
-        message.delete();
         const embed = new Discord.MessageEmbed()
         got('https://www.reddit.com/r/memes/random/.json').then(response => {
             let content = JSON.parse(response.body);
