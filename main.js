@@ -18,7 +18,7 @@ client.on('message', async message => {
     const messageArray = message.content.split(' ');
 	const cmd = messageArray[0];
     const args = messageArray.slice(1);
-    let botcmd = message.guild.channels.cache.get("730476719366078464");
+    let embedhelp = message.guild.channels.cache.get("730476719366078464");
 
     if (message.content === `${prefix}hi`) {
 	    message.reply('Hello');
