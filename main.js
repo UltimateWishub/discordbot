@@ -73,7 +73,7 @@ client.on('message', async message => {
             { name: '3️⃣ = ሚካኤል', value: `ሚካኤል role`, inline: false },
             { name: '4️⃣ = ጊዮርጊስ', value: `ጊዮርጊስ role`, inline: false },
         )
-        let msgEmbed = await message.channel.send(embed)
+        let msgEmbed = message.channel.send(embed)
         await msgEmbed.react('1️⃣')
         await msgEmbed.react('2️⃣')
         await msgEmbed.react('3️⃣')
@@ -95,7 +95,7 @@ client.on('message', async message => {
             embed.setImage(memeImage)
             embed.setColor('RANDOM')
             embed.setFooter(`👍 ${memeUpvotes} 👎 ${memeDownvotes} 💬 ${memeNumComments}`)
-            let msgEmbed = await botcmd.send(embedhelp);
+            let msgEmbed = botcmd.send(embedhelp);
         })
     }
 });
