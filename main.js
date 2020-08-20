@@ -12,7 +12,7 @@ client.login(process.env.token);
 
 client.on('message', async message => {
     if(message.author.bot || message.channel.type === "dm") {
-        message.channel.send("dont dm me noob")
+        message.reply("dont dm me noob")
     }
 
     const messageArray = message.content.split(' ');
