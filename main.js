@@ -60,7 +60,7 @@ client.on('message', async message => {
 		{ name: '.meme', value: `Shows a random meme from r/memes subreddit`, inline: false},
 	)
         .setFooter('Use the suggestions command in the #suggestions channel and everything else in this channel')
-        let msgEmbed = await botcmd.send(embedhelp);
+        let msgEmbed = botcmd.send(embedhelp);
     } else if (message.content === `${prefix}reactions`) {
         message.delete();
         let embed = new Discord.MessageEmbed()
