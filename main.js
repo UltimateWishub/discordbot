@@ -6,6 +6,7 @@ const got = require('got');
 client.on("ready", async () => {
     console.log('Dn.Bot is online!');
     client.user.setActivity("the deacon server", {type: "WATCHING"});
+    client.user.setPresence("doing nothing")
 })
 
 client.login(process.env.token);
@@ -47,7 +48,6 @@ client.on('message', async message => {
         await msgEmbed.react('👍')
         await msgEmbed.react('👎')
     } else if (message.content === `${prefix}help`) {
-        let botcmd = message.guild.channels.cache.get("730476719366078464");
 
         let embedhelp = new Discord.MessageEmbed()
         .setTitle(`Commands`)
