@@ -4,8 +4,8 @@ const {prefix} = require('./config.json');
 const got = require('got');
 
 client.on("ready", async () => {
-    console.log('Dn.Bot is online!');
-    client.user.setActivity("the deacon server", {type: "WATCHING"});
+    console.log('Bot is online!');
+    client.user.setActivity("youtube", {type: "WATCHING"});
     client.user.setPresence("doing nothing")
 })
 
@@ -13,7 +13,7 @@ client.login(process.env.token);
 
 client.on('message', async message => {
     if(message.author.bot || message.channel.type === "dm") {
-        message.author.send("dont dm me noob")
+        message.author.send("dont dm me")
     }
 
     const messageArray = message.content.split(' ');
